@@ -1,0 +1,15 @@
+@include media-breakpoint-down(md) {
+	header {
+		nav {
+			height: 75px;
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	header {
+		nav {
+			height: 50px;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+/.idea/
+*.pyc
+.coverage
+media/*
+ansible-django/*
+collectstatic
+.env
+logs/*
+db.sqlite3

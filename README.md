@@ -47,3 +47,15 @@ Install requirements for a project.
 .. code-block:: bash
 
     $ cd /var/www/django_bootstrap && pip install -r requirements/local.txt
+    
+Migrate
+
+.. code-block:: bash
+
+    $ python manage.py migrate
+    
+Run on local machine, swagger docs are available -  http://127.0.0.1:8000/api/v0/swagger/
+
+.. code-block:: bash
+
+    $ python manage.py runserver

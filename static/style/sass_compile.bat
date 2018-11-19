@@ -1,1 +1,0 @@
-sass --sourcemap=none --watch style.scss:style.css --sourcemap=none

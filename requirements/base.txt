@@ -1,2 +1,6 @@
 Django==2.1.2
 pytz==2018.5
+djangorestframework==3.9.0
+drf-yasg==1.11.0
+flex==6.13.2
+swagger-spec-validator==2.4.1

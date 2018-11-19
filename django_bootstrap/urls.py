@@ -16,8 +16,37 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
+from django.conf import settings
+from django.views.generic import RedirectView
+
+from rest_framework import (routers, permissions)
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
+
+from apps.home.utils import generate_url
+
+router = routers.DefaultRouter()
+
+schema_view_yasg = get_schema_view(
+   openapi.Info(
+      title="Test API",
+      default_version='v1',
+      description="Test backend",
+      terms_of_service="",
+      contact=openapi.Contact(email="contact@codebnb.me"),
+      license=openapi.License(name=""),
+   ),
+   validators=['flex', 'ssv'],
+   public=True,
+   permission_classes=(permissions.AllowAny,),
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', include('apps.home.urls', namespace='home')),
+    generate_url(r'swagger/$', schema_view_yasg.with_ui('swagger', cache_timeout=None), name='schema-swagger-ui'),
+    url(r'^$', RedirectView.as_view(url=settings.API_VERSION_URL)),
+    url(r'^home', include('apps.home.urls', namespace='home')),
 ]
+
+router = routers.DefaultRouter()
+urlpatterns.append(generate_url('', include(router.urls)))

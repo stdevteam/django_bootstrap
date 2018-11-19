@@ -24,6 +24,7 @@ from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 
 from apps.home.utils import generate_url
+from apps.home.views import CheckmarksViewSet
 
 router = routers.DefaultRouter()
 
@@ -49,4 +50,5 @@ urlpatterns = [
 ]
 
 router = routers.DefaultRouter()
+router.register(r'checkmarks', CheckmarksViewSet, base_name='checkmarks')
 urlpatterns.append(generate_url('', include(router.urls)))

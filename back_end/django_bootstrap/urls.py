@@ -49,6 +49,5 @@ urlpatterns = [
     url(r'^home', include('apps.home.urls', namespace='home')),
 ]
 
-router = routers.DefaultRouter()
 router.register(r'checkmarks', CheckmarksViewSet, base_name='checkmarks')
 urlpatterns.append(generate_url('', include(router.urls)))

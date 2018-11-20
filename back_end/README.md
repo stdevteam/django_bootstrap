@@ -54,6 +54,12 @@ Migrate
 
     $ python manage.py migrate
     
+Run tests
+
+.. code-block:: bash
+
+    $ python manage.py test
+    
 Run on local machine, swagger docs are available -  http://127.0.0.1:8000/api/v0/swagger/
 
 .. code-block:: bash

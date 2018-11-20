@@ -1,0 +1,10 @@
+.back-navigation {
+	@include display-flex;
+	@include align-center;
+	@include flex-wrap;
+	font-size: 12px;
+	margin-bottom: 50px;
+	i {
+		line-height: 13px;
+	}
+}

@@ -1,0 +1,13 @@
+.card {
+	position: relative;
+	.card-body {
+		padding: 30px 45px;
+	}
+	.card-title {
+		margin-bottom: 0;
+	}
+	.checkbox-wrap {
+		@include center(vertical);
+		left: -15px;
+	}
+}

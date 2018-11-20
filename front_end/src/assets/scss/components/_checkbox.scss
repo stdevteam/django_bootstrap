@@ -1,0 +1,29 @@
+.checkbox-wrap {
+	cursor: pointer;
+	margin: 0;
+	input {
+		display: none;
+		&:checked + .icon {
+			background: $color-green;
+		}
+	}
+	.icon {
+		display: block;
+		width: 30px;
+		min-width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background: $color-blue;
+		cursor: pointer;
+		@include transition(.3s);
+		&:after {
+			content: "\f00c";
+			font-family: $font-awesome;
+			font-weight: 900;
+			color: #fff;
+			font-size: 15px;
+			line-height: 15px;
+			@include center(both);
+		}
+	}
+}

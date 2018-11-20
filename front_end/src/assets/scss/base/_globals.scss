@@ -1,0 +1,122 @@
+body {
+	min-height: 100vh;
+	@include display-flex;
+	@include dir-col;
+	color: $color-text;
+}
+
+.content {
+	@include flex-grow(1);
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	max-width: 990px;
+	padding: 0 20px;
+}
+
+h1 {
+	position: relative;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+	&:after {
+		content: '';
+		@include position($type: absolute, $left: 0, $bottom: 0);
+		width: 48px;
+		height: 4px;
+		border-radius: 2px;
+		background: #eaeaea;
+	}
+}
+
+// Text color
+.color-primary {
+	color: $color-primary;
+}
+.color-blue {
+	color: $color-blue;
+}
+.color-text {
+	color: $color-text;
+}
+.color-text-light {
+	color: $color-text-light;
+}
+
+// Background color
+.bg-primary {
+	background: $color-primary !important;
+}
+.bg-light-grey {
+	background: $bg-light-grey !important;
+}
+
+// Links
+.link {
+	color: $color-blue;
+	text-decoration: none !important;
+	&:hover {
+		color: darken($color-blue, 20%);
+	}
+}
+
+
+// Text
+.ellipsis {
+	@include ellipsis(100%);
+}
+.ellip {
+  display: block;
+  height: 100%;
+}
+.ellip-line {
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  max-width: 100%;
+}
+.ellip,
+.ellip-line {
+  position: relative;
+  overflow: hidden;
+}
+
+// Spaces
+.section-padding {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+section {
+	.heading {
+		padding-bottom: 40px;
+		margin-bottom: 50px;
+	}
+}
+
+.small {
+	text-transform: uppercase;
+	font-size: 12px;
+	margin-bottom: 25px;
+}
+
+
+// Font weight
+$step: 1;
+@while $step <= 9 {
+    .fw-#{$step*100} {
+        font-weight: #{$step*100};
+    }
+    $step: $step + 1;
+}
+
+.icon-group {
+	@include display-flex;
+	@include align-center;
+	i {
+		margin: 0 6px;
+		color: $color-primary;
+	}
+}

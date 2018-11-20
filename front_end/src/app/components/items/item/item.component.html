@@ -1,0 +1,22 @@
+<!-- Card - start -->
+<div class="card bg-light-grey">
+  <label class="checkbox-wrap">
+    <input type="checkbox" [checked]="itemData.value" (change)="onCheck($event)">
+    <span class="icon"></span>
+  </label>
+  <div class="card-body">
+    <div class="d-flex align-items-center justify-content-between mb-2 mb-md-3">
+      <h4 class="card-title color-blue ellipsis pr-3">{{ itemData.name }}</h4>
+      <div class="icon-group">
+        <i class="fa fa-file-alt"></i>
+        <i class="fa fa-thumbtack"></i>
+      </div>
+    </div>
+    <p class="card-text truncate" data-lines="3">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit facilis libero obcaecati, veniam soluta asperiores
+      tempore voluptate aspernatur itaque dolores iure eaque. Quasi dolorem, ducimus laborum tempora expedita quibusdam
+      consequatur.
+    </p>
+  </div>
+</div>
+<!-- Card - end -->

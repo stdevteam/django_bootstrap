@@ -1,0 +1,11 @@
+@include media-breakpoint-down(md) {
+	.back-navigation {
+		margin-bottom: 30px;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.back-navigation {
+		margin-bottom: 10px;
+	}
+}

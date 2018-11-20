@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
+from corsheaders.defaults import default_headers
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -41,7 +43,8 @@ DEFAULT_APPS = [
 
 THIRD_PARTY_APPS = [
     'rest_framework',
-    'drf_yasg'
+    'drf_yasg',
+    'corsheaders',
 ]
 
 PROJECT_APPS = [
@@ -53,6 +56,7 @@ INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -142,3 +146,19 @@ API_VERSION_URL = 'api/v0/'
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny', ),
 }
+
+# A list of origin hostnames that are authorized to make cross-site HTTP requests.
+# TODO: edit this in production
+CORS_ORIGIN_WHITELIST = (
+    'localhost:4200',
+    'test.codebnb.me'
+)
+
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
